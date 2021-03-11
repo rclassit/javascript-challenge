@@ -32,5 +32,16 @@ button.on("click", () => {
     var filtered = tableData.filter(tableData => tableData.datetime === inputDate);
 
     $tbody.html("");
-    
+
+    let response = {
+        filtered
+    }
+
+    if(response.filtered.length !==0 ) {
+        Data(filtered);
+    }
+
+        else{
+            $tbody.append("tr").append("td").text("No UFO Sightings");
+        }
 })
