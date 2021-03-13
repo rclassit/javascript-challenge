@@ -31,5 +31,14 @@ button.on("click", function() {
 
     //Select inputs for all columns 
     var Inputs = d3.select("#input");
-    
+    // Value properties 
+    var Values = Inputs.property("value");
+    // console.log(Values)
+    // Filter Data 
+    var FilterData = tableData.filter(sightings => sightings.datetime === Values ||
+                                                   sightings.city === Values ||
+                                                   sightings.state === Values ||
+                                                   sightings.country === Values || 
+                                                   sightings.shape === Values);
+
 })
