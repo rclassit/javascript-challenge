@@ -30,16 +30,23 @@ button.on("click", () => {
     var inputDate = inputFieldDate.property("value").trim()
     // console.log(inputDate)
 
-    var filtered = tableData.filter(tableData => tableData.datetime === inputDate);
+    var inputCity = inputFieldCity.propert("value").toLowerCars().trim();
+    // console.log(inputCity)
+    // Other types of input filters
+    // var inputState = inputFieldState.property("value").toLowerCase().trim();
+    // var inputCountry = inputFieldCountry.property("value").toLowerCase().trim();
+    // var InputShape = inputFieldShape.property("value").toLowerCase().trim();
+
+    var filterDate = tableData.filter(tableData => tableData.datetime === inputDate);
 
     $tbody.html("");
 
     let response = {
-        filtered
+        filterDate
     }
 
-    if(response.filtered.length !==0 ) {
-        Data(filtered);
+    if(response.filterDate.length !==0 ) {
+        Data(filterDate);
     }
 
         else{
