@@ -41,4 +41,7 @@ button.on("click", function() {
                                                    sightings.country === Values || 
                                                    sightings.shape === Values);
 
+    // Filter check
+    console.log(FilterData);
+
 })
