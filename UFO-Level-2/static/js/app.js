@@ -6,22 +6,22 @@ console.log(tableData);
 
 //references
 
-var $tbody = d3.select("tbody");
-var button = d3.select("#filter-btn");
-var inputFieldDate = d3.select("#datetime");
-var inputFieldCity = d3.select("#city");
-var columns = ["datetime","city","state","country","shape","durationMinutes","comments"]
+var tbody = d3.select("tbody");
 
-//input data for HTML 
+// for loop for each column 
+tableData.forEach(function(ufoSighting) {
+    console.log(ufoSighting);
+    // Append one table row `tr` for each UFO Sighting object
+    var row = tbody.append("tr");
 
-var Data = (datainput) => {
-    datainput.forEach(ufoSightings => {
-        var row = $tbody.append("tr");
-        columns.forEach(column => row.append("td").text(ufoSightings[column]))
+    // Use `Object.entries` to console.log each UFO Sighting value
+    Object.entries(ufoSighting).forEach(function([key, value]) {
+      console.log(key, value);
+      // Append a cell to the row for each value
+      var cell = row.append("td");
+      cell.text(value);
     });
-}
-
-Data(tableData);
+  });
 
 //Event listener 
 button.on("click", () => {
@@ -61,7 +61,7 @@ button.on("click", () => {
     // }
 
     // if(response.filterDate.length !== 0) {
-    //     addData(filterDate);
+    //     Data(filterDate);
     // }
 
 
