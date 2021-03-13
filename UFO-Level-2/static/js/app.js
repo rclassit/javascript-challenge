@@ -44,4 +44,15 @@ button.on("click", function() {
     // Filter check
     console.log(FilterData);
 
-})
+    // for loop to append table rows 
+
+    FilterData.forEach(function(datasets) {
+    console.log(datasets);
+    var row = tbody.append("tr");
+    Object.entries(datasets).forEach(function([key,value]) {
+        console.log(key, value);
+        var cell = row.append("td");
+        cell.text(value);
+    });
+});
+});
