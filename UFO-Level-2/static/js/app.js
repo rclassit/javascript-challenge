@@ -32,12 +32,17 @@ button.on("click", () => {
 
     var inputCity = inputFieldCity.propert("value").toLowerCars().trim();
     // console.log(inputCity)
-    // Other types of input filters
+    // Other types of inputs
     // var inputState = inputFieldState.property("value").toLowerCase().trim();
     // var inputCountry = inputFieldCountry.property("value").toLowerCase().trim();
     // var InputShape = inputFieldShape.property("value").toLowerCase().trim();
 
     var filterDate = tableData.filter(tableData => tableData.datetime === inputDate);
+    // console.log(filterDate)
+    var filterCity = tableData.filter(tableData => tableData.city === inputCity);
+    // console.log(filterCity)
+    // other filter inputs 
+
 
     $tbody.html("");
 
